@@ -1,0 +1,96 @@
+{
+  "timestamp": 1535925091,
+  "contract_uri": "https://s3.amazonaws.com/qsp-network-published-contracts/5045cc92-0ad8-45c7-a767-4a48f79dadfc",
+  "contract_hash": "e49bc704290a4322eecb827618fc1eba4863271cf9678da31bd24dd5e18b1526",
+  "requestor": "0x7714cC433122c1aFC4486e770e6F82AB2B541dDC",
+  "auditor": "0xa0f089D377b7e038cc8D71d813aAe2Cd59Eff7d4",
+  "request_id": 24,
+  "version": "0.1.2",
+  "audit_state": 4,
+  "status": "success",
+  "analyzers_reports": [
+    {
+      "analyzer": {
+        "name": "oyente",
+        "version": "7d8e53322957adb11983cc05aa04a410aa320e078bdfe2e9e395dcdde9610e67",
+        "command": "python /oyente/oyente/oyente.py -ce -j -s /shared/tmp186kh3q3",
+        "vulnerabilities_checked": [
+          "integer_underflow",
+          "integer_overflow",
+          "callstack",
+          "money_concurrency",
+          "time_dependency",
+          "reentrancy",
+          "parity_multisig_bug_2",
+          "assertion_failure"
+        ]
+      },
+      "status": "success",
+      "warnings": [
+        "root:You are using solc version 0.4.24, The latest supported version is 0.4.19"
+      ],
+      "coverages": [
+        {
+          "percentage": 100,
+          "file": "5045cc92-0ad8-45c7-a767-4a48f79dadfc",
+          "contract": "AQUA"
+        },
+        {
+          "percentage": 100,
+          "file": "5045cc92-0ad8-45c7-a767-4a48f79dadfc",
+          "contract": "SafeMath"
+        }
+      ],
+      "potential_vulnerabilities": [
+        {
+          "name": "integer_overflow",
+          "file": "5045cc92-0ad8-45c7-a767-4a48f79dadfc",
+          "contract": "AQUA",
+          "instances": [
+            {
+              "ref_id": 0,
+              "start_line": 26,
+              "end_line": 26
+            }
+          ]
+        }
+      ],
+      "count_potential_vulnerabilities": 1,
+      "hash": "bf75cedc8f761c2b58810736ce6182079a5a6b5284edc918d9e64d252ab49b8d",
+      "start_time": 1535925017,
+      "end_time": 1535925091
+    },
+    {
+      "analyzer": {
+        "name": "mythril",
+        "version": "a4e01e358fc52517a1889fad415846876d27ad9e8f6555a59246b761a89ec882",
+        "command": "docker run -v \"\":/shared/ -i \"mythril/myth@sha256:a4e01e358fc52517a1889fad415846876d27ad9e8f6555a59246b761a89ec882\" -o json -x \"/shared/tmp186kh3q3\"",
+        "vulnerabilities_checked": [
+          "call_data_forwarded",
+          "dependence_on_environment_variable",
+          "call_to_a_user-supplied_address",
+          "use_of_tx_origin",
+          "ether_send",
+          "exception_state",
+          "message_call_to_external_contract",
+          "state_change_after_external_call",
+          "integer_overflow",
+          "integer_underflow",
+          "multiple_calls",
+          "unchecked_suicide",
+          "transaction_order_dependence",
+          "unchecked_call_return_value"
+        ]
+      },
+      "status": "success",
+      "potential_vulnerabilities": [],
+      "count_potential_vulnerabilities": 0,
+      "hash": "89d6868a94a00136d265c40eb6c9672702b2efe68928f125b0b2e1967dc96bfe",
+      "start_time": 1535925017,
+      "end_time": 1535925091
+    }
+  ],
+  "compilation_warnings": [
+    "5045cc92-0ad8-45c7-a767-4a48f79dadfc:62:6: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use \"constructor(...) { ... }\" instead.\n     function AQUA () public {\n     ^ (Relevant source part starts here and spans across multiple lines).\n"
+  ]
+}
